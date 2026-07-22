@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgooxofgxtsxg"
-path="res://.godot/imported/heresthething.png-53c0a573d72c07be2bc36d17fd34bd2c.ctex"
+path="res://.godot/imported/heresthething.png-1436fb62a384e97ebd098c3bf4b59a6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heresthething.png"
-dest_files=["res://.godot/imported/heresthething.png-53c0a573d72c07be2bc36d17fd34bd2c.ctex"]
+source_file="res://artwork/heresthething.png"
+dest_files=["res://.godot/imported/heresthething.png-1436fb62a384e97ebd098c3bf4b59a6c.ctex"]
 
 [params]
 

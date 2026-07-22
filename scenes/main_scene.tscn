@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8ad4pin0moqi"]
 
 [ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://artwork/icon.svg" id="1_w2twt"]
-[ext_resource type="Script" uid="uid://uuuur0lgm0hf" path="res://scenes/spawner.gd" id="2_pw63i"]
+[ext_resource type="PackedScene" uid="uid://vcrukcf7srmc" path="res://scenes/spawner.tscn" id="2_pw63i"]
 
 [node name="main_scene" type="Node2D" unique_id=1565350175]
 
@@ -12,27 +12,9 @@ scale = Vector2(9.343749, 5.3125)
 texture = ExtResource("1_w2twt")
 
 [node name="drac" type="Sprite2D" parent="." unique_id=184267607]
-position = Vector2(209, 189)
+position = Vector2(302, 397)
+scale = Vector2(0.65625, 2.1796875)
 texture = ExtResource("1_w2twt")
 
-[node name="Spawner" type="Sprite2D" parent="." unique_id=979591683]
-modulate = Color(0.6745098, 0.4627451, 0, 1)
-position = Vector2(487, 292)
-texture = ExtResource("1_w2twt")
-script = ExtResource("2_pw63i")
-
-[node name="Button" type="Button" parent="Spawner" unique_id=1744383701]
-modulate = Color(0, 0, 0, 0.15686275)
-offset_left = -66.0
-offset_top = -68.0
-offset_right = 70.0
-offset_bottom = 68.0
-icon = ExtResource("1_w2twt")
-
-[node name="Timer" type="Timer" parent="Spawner" unique_id=44026331]
-wait_time = 0.5
-one_shot = true
-autostart = true
-
-[connection signal="pressed" from="Spawner/Button" to="Spawner" method="_on_button_pressed"]
-[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
+[node name="Spawner" parent="." unique_id=1337995178 instance=ExtResource("2_pw63i")]
+position = Vector2(-92, 78)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ca0fyechflxfp"]
 
-[ext_resource type="Script" uid="uid://pfsdqob3ecjp" path="res://menu_settings.gd" id="1_5c6tt"]
-[ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://icon.svg" id="1_afpo8"]
+[ext_resource type="Script" uid="uid://pfsdqob3ecjp" path="res://scripts/menu_settings.gd" id="1_5c6tt"]
+[ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://artwork/icon.svg" id="1_afpo8"]
 
 [sub_resource type="Gradient" id="Gradient_5c6tt"]
 

@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://ca0fyechflxfp"]
 
+<<<<<<< Updated upstream:scenes/Menu_Settings.tscn
 [ext_resource type="Script" uid="uid://pfsdqob3ecjp" path="res://scripts/menu_settings.gd" id="1_5c6tt"]
+=======
+[ext_resource type="Script" uid="uid://pfsdqob3ecjp" path="res://menu_settings.gd" id="1_5c6tt"]
+>>>>>>> Stashed changes:Menu_Settings.tscn
 [ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://artwork/icon.svg" id="1_afpo8"]
 
 [sub_resource type="Gradient" id="Gradient_5c6tt"]
@@ -10,18 +14,13 @@ gradient = SubResource("Gradient_5c6tt")
 width = 128
 height = 128
 
-[sub_resource type="Gradient" id="Gradient_afpo8"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_afpo8"]
-gradient = SubResource("Gradient_afpo8")
-width = 128
-height = 128
-
 [node name="MenuSettings" type="Control" unique_id=907695546]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5c6tt")
@@ -33,6 +32,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Exit" type="TextureButton" parent="." unique_id=2056192238]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(16, 16)
+offset_transform_scale = Vector2(0.5, 0.5)
+offset_transform_visual_only = false
+texture_normal = ExtResource("1_afpo8")
+texture_hover = SubResource("GradientTexture2D_5c6tt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1785946731]
 layout_mode = 1
@@ -59,29 +76,9 @@ offset_transform_position = Vector2(0, 16)
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="Settings" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=417971862]
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 16)
-offset_transform_scale = Vector2(0.75, 0.75)
-offset_transform_visual_only = false
-action_mode = 0
-texture_normal = ExtResource("1_afpo8")
-
 [node name="Start" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=1121599593]
 layout_mode = 2
 texture_normal = ExtResource("1_afpo8")
 texture_hover = SubResource("GradientTexture2D_5c6tt")
 
-[node name="Exit" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=1497919818]
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 16)
-offset_transform_scale = Vector2(0.75, 0.75)
-offset_transform_visual_only = false
-texture_normal = ExtResource("1_afpo8")
-texture_hover = SubResource("GradientTexture2D_afpo8")
-
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]

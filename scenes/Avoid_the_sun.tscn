@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c3bhfkokdx774"]
+
+[ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://artwork/icon.svg" id="1_ubphx"]
+[ext_resource type="Script" uid="uid://ebft2jg8nrc5" path="res://scenes/dracula.gd" id="2_pfdry"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vbqh6"]
+load_path = "res://.godot/imported/1920x1080-light-pink-solid-color-background-3991086767.jpg-e9131256141bcd2c8d5901dc2ccfa295.ctex"
+
+[node name="AvoidTheSun" type="Node2D" unique_id=1568743786]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1665399573]
+offset_right = 2345.0
+offset_bottom = 720.0
+texture = SubResource("CompressedTexture2D_vbqh6")
+expand_mode = 1
+
+[node name="Dracula" type="Sprite2D" parent="." unique_id=165544301]
+position = Vector2(125, 538)
+texture = ExtResource("1_ubphx")
+script = ExtResource("2_pfdry")

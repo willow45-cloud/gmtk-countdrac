@@ -4,6 +4,7 @@ extends Node2D
 var button_clicked = false
 var amount_clicked = 0
 var moving_speed = 100
+var drac_spin = false
 
 func _ready() -> void:
 	$".".hide()
@@ -32,7 +33,8 @@ func _on_button_pressed() -> void:
 		$".".hide()
 		$Button.hide()
 		amount_clicked += 1 
-		
+		drac_spin = true
+		print(drac_spin)
 	elif button_clicked == false:
 		pass
 		

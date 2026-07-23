@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://41vaonc3hak5"]
+
+[ext_resource type="FontFile" uid="uid://nh1vfpoxjq3c" path="res://artwork/CastleChunk-Regular.otf" id="1_7lbg8"]
+[ext_resource type="Script" uid="uid://bujgp8ix6eira" path="res://scenes/ready_count.gd" id="1_pl3vn"]
+
+[node name="ready_count" type="Node2D" unique_id=898958208]
+script = ExtResource("1_pl3vn")
+
+[node name="start" type="Label" parent="." unique_id=1380902742]
+visible = false
+offset_left = -114.0
+offset_top = -48.0
+offset_right = 114.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "READY?"
+
+[node name="go" type="Label" parent="." unique_id=1760590154]
+visible = false
+offset_left = -43.0
+offset_top = -44.0
+offset_right = 168.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "GO!"
+
+[node name="1" type="Label" parent="." unique_id=541609183]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "1"
+
+[node name="2" type="Label" parent="." unique_id=1535244631]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "2"
+
+[node name="3" type="Label" parent="." unique_id=1274311564]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "3"
+
+[node name="4" type="Label" parent="." unique_id=158475993]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "4"
+
+[node name="5" type="Label" parent="." unique_id=683785736]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "5"
+
+[node name="6" type="Label" parent="." unique_id=445358246]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "6"
+
+[node name="7" type="Label" parent="." unique_id=1527233343]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "7"
+
+[node name="8" type="Label" parent="." unique_id=1030166175]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "8"
+
+[node name="9" type="Label" parent="." unique_id=148851450]
+visible = false
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 195.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "9"
+
+[node name="10" type="Label" parent="." unique_id=841793387]
+visible = false
+offset_left = -32.0
+offset_top = -47.0
+offset_right = 179.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "10"
+
+[node name="good_job" type="Label" parent="." unique_id=1094736611]
+visible = false
+offset_left = -151.0
+offset_top = -128.0
+offset_right = 150.0
+offset_bottom = -41.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "Good Job!"
+horizontal_alignment = 1
+
+[node name="awful" type="Label" parent="." unique_id=1563065162]
+visible = false
+offset_left = -150.0
+offset_top = -131.0
+offset_right = 151.0
+offset_bottom = -44.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "Awful"
+horizontal_alignment = 1
+
+[node name="amazing" type="Label" parent="." unique_id=779547784]
+visible = false
+offset_left = -150.0
+offset_top = -131.0
+offset_right = 151.0
+offset_bottom = -44.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "Amazing!"
+horizontal_alignment = 1
+
+[node name="blnt" type="Label" parent="." unique_id=1326547342]
+visible = false
+offset_left = -341.0
+offset_top = -129.0
+offset_right = 341.0
+offset_bottom = -42.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "Better luck next time"
+horizontal_alignment = 1
+
+[node name="next_button" type="Button" parent="." unique_id=1284969929]
+visible = false
+offset_left = -50.0
+offset_top = -32.0
+offset_right = 50.0
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 43
+text = "Next"
+
+[connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]

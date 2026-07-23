@@ -4,7 +4,7 @@ extends Node2D
 var button_clicked = false
 var amount_clicked = 0
 var moving_speed = 100
-var drac_spin = false
+
 
 func _ready() -> void:
 	$".".hide()
@@ -12,8 +12,8 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	pass
-
-
+	
+#picks new location and time randomly on timer end 
 func _on_timer_timeout() -> void:
 	var spawn_location_x = randi_range(0,1000)
 	var spawn_location_y = randi_range(0,600)
@@ -25,7 +25,7 @@ func _on_timer_timeout() -> void:
 	$Timer.wait_time = timer_range
 	
 	
-
+#when button clicked
 func _on_button_pressed() -> void:
 	print("you got me")
 	button_clicked = true
@@ -33,12 +33,16 @@ func _on_button_pressed() -> void:
 		$".".hide()
 		$Button.hide()
 		amount_clicked += 1 
-		drac_spin = true
-		print(drac_spin)
 	elif button_clicked == false:
 		pass
-		
-		
-		
-#func move_at_drac():
-#	$".".postition = position.move_toward(Vector2(300,400), moving_speed) 
+	#updates win condition when button clicked	
+	if amount_clicked == 1 or amount_clicked == 0:
+		Global.make_end_2()
+	elif amount_clicked == 2 or amount_clicked == 3:
+		Global.make_end_4()
+	elif amount_clicked == 4 or amount_clicked == 5:
+		Global.make_end_1()
+	elif amount_clicked  > 5:
+		Global.make_end_3()
+	else:
+		pass

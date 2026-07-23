@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://1c3qg73gk2wn"
+path="res://.godot/imported/kitchenBackground.aseprite-4d19e5934123c2b4504452c7cb93ebb4.res"
+
+[deps]
+
+source_file="res://artwork/kitchenBackground.aseprite"
+dest_files=["res://.godot/imported/kitchenBackground.aseprite-4d19e5934123c2b4504452c7cb93ebb4.res"]
+
+[params]
+

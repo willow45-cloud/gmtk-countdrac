@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://8ad4pin0moqi"]
+
+[ext_resource type="Script" uid="uid://ckfm51jjcf7rv" path="res://scripts/count_the_rice.gd" id="1_al55v"]
+[ext_resource type="Texture2D" uid="uid://cgooxofgxtsxg" path="res://artwork/heresthething.png" id="2_eo5cp"]
+[ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://artwork/icon.svg" id="2_hrank"]
+[ext_resource type="PackedScene" uid="uid://vcrukcf7srmc" path="res://scenes/spawner.tscn" id="3_eo5cp"]
+[ext_resource type="PackedScene" uid="uid://41vaonc3hak5" path="res://scenes/ready_count.tscn" id="4_hrank"]
+
+[node name="main_scene" type="Node2D" unique_id=1565350175]
+script = ExtResource("1_al55v")
+
+[node name="backgroumd" type="Sprite2D" parent="." unique_id=1858148783]
+modulate = Color(1, 1, 0.4745098, 0.1254902)
+position = Vector2(642, 354.5)
+scale = Vector2(4.5104895, 2.7052236)
+texture = ExtResource("2_eo5cp")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://artwork/kitchenBackground.aseprite",
+"source_uid": 1830767704451377941
+}
+
+[node name="drac" type="Sprite2D" parent="." unique_id=184267607]
+position = Vector2(302, 397)
+scale = Vector2(0.65625, 2.1796875)
+texture = ExtResource("2_hrank")
+
+[node name="Spawner" parent="." unique_id=1337995178 instance=ExtResource("3_eo5cp")]
+position = Vector2(-92, 78)
+
+[node name="ready_count" parent="." unique_id=898958208 instance=ExtResource("4_hrank")]
+position = Vector2(651, 350)

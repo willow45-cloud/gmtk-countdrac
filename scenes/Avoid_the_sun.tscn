@@ -9,12 +9,13 @@ load_path = "res://.godot/imported/1920x1080-light-pink-solid-color-background-3
 [node name="AvoidTheSun" type="Node2D" unique_id=1568743786]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1665399573]
-offset_right = 2345.0
-offset_bottom = 720.0
+offset_right = 780.0
+offset_bottom = 217.0
 texture = SubResource("CompressedTexture2D_vbqh6")
 expand_mode = 1
 
 [node name="Dracula" type="Sprite2D" parent="." unique_id=165544301]
-position = Vector2(125, 538)
+position = Vector2(137, 119)
+scale = Vector2(0.4322949, 0.4322949)
 texture = ExtResource("1_ubphx")
 script = ExtResource("2_pfdry")

@@ -6,6 +6,9 @@ var end_text = 2 # defaults to awful score
 var what_counter_doing = 0
 var text_running = false
 var auto_start_countdown = false
+var amount_rice_clicked = 0 
+var button_pressed_frsound = false
+var mini_game_over = false
 
 func _ready() -> void:
 	what_counter_doing = 0
@@ -19,7 +22,7 @@ func text_go():
 func text_stop():
 	text_running = false
 	
-	
+	#can use ones in lines
 	#---------------------------------------------------------------------------------
 	
 	# run functions in your own script by putting "Global.make_count_NUM()"
@@ -58,6 +61,15 @@ func make_counter_3():
 	what_counter_doing = 3	
 	
 	
+	#feel free to hook your game ending to this global condition on your side
+func game_is_over():
+	mini_game_over = true
+	
+func game_is_not_over():
+	mini_game_over = false 
+	
+	
+	
 	#---------------------------------------------------------------------------------
 	
 
@@ -82,11 +94,14 @@ func make_end_0():
 	end_text = 0
 	
 	
+func add_rice():
+	amount_rice_clicked += 1 
+
+func button_pressed_frsound_true():
+	button_pressed_frsound = true
 	
-	
-	
-	
-	
+func button_pressed_frsound_false():
+	button_pressed_frsound = false
 	
 	
 	

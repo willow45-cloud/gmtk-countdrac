@@ -1,52 +1,179 @@
 [gd_scene format=3 uid="uid://8ad4pin0moqi"]
 
 [ext_resource type="Script" uid="uid://ckfm51jjcf7rv" path="res://scripts/count_the_rice.gd" id="1_al55v"]
-[ext_resource type="Texture2D" uid="uid://cgooxofgxtsxg" path="res://artwork/heresthething.png" id="2_eo5cp"]
-[ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://artwork/icon.svg" id="2_hrank"]
-[ext_resource type="PackedScene" uid="uid://vcrukcf7srmc" path="res://scenes/spawner.tscn" id="3_eo5cp"]
-[ext_resource type="PackedScene" uid="uid://41vaonc3hak5" path="res://scenes/ready_count.tscn" id="4_hrank"]
+[ext_resource type="FontFile" uid="uid://nh1vfpoxjq3c" path="res://artwork/CastleChunk-Regular.otf" id="2_dvfs6"]
+[ext_resource type="Texture2D" uid="uid://bbc2ecgo7odht" path="res://artwork/kitchenBackground.png" id="2_eo5cp"]
+[ext_resource type="PackedScene" uid="uid://vcrukcf7srmc" path="res://scenes/rice_spawner.tscn" id="3_eo5cp"]
+[ext_resource type="PackedScene" uid="uid://41vaonc3hak5" path="res://scenes/countdown_timers.tscn" id="4_hrank"]
+[ext_resource type="Texture2D" uid="uid://c2xpyyn3hh7ha" path="res://artwork/open-hands-isolated-transparent-background-png-psd_888962-2104-816525387.jpg" id="5_e4ej3"]
+[ext_resource type="Texture2D" uid="uid://ciu8o36jucgjb" path="res://artwork/left-hand-closed-titan-90081nl01j-analog-watch-for-me-11562894776fxfq1aqacd-3308364757.png" id="6_dexx3"]
+[ext_resource type="Texture2D" uid="uid://c4tarmf1jcatf" path="res://artwork/RiceBag.png" id="7_dexx3"]
+[ext_resource type="AudioStream" uid="uid://hti8kyok3pgm" path="res://sound_effects/better_rice_drop.wav" id="8_8r4el"]
+[ext_resource type="AudioStream" uid="uid://cq3qik7gu65dm" path="res://sound_effects/better_rice_pickup.wav" id="9_n80kj"]
+[ext_resource type="AudioStream" uid="uid://bs2yemxx0b368" path="res://sound_effects/missed_rice.wav" id="10_keobs"]
+[ext_resource type="AudioStream" uid="uid://dothpp0bmgiyj" path="res://sound_effects/low_cat.wav" id="11_0opri"]
+[ext_resource type="AudioStream" uid="uid://icd4wirfwb15" path="res://sound_effects/cat_sounds.wav" id="12_nhfsr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r4el"]
+atlas = ExtResource("7_dexx3")
+region = Rect2(0, 0, 54, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n80kj"]
+atlas = ExtResource("7_dexx3")
+region = Rect2(54, 0, 54, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r4el")
+}],
+"loop": 1,
+"name": &"full",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n80kj")
+}],
+"loop": 1,
+"name": &"spilled",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(2091, 20)
 
 [node name="main_scene" type="Node2D" unique_id=1565350175]
 script = ExtResource("1_al55v")
 
-[node name="backgroumd" type="Sprite2D" parent="." unique_id=1858148783]
-modulate = Color(1, 1, 0.4745098, 0.1254902)
-position = Vector2(642, 354.5)
-scale = Vector2(4.5104895, 2.7052236)
+[node name="amount_collected" type="Label" parent="." unique_id=108748321]
+offset_left = 6.0
+offset_top = -3.0
+offset_right = 65.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_dvfs6")
+theme_override_font_sizes/font_size = 29
+text = "0/30 rice"
+
+[node name="KitchenBackground" type="Sprite2D" parent="." unique_id=1498085166]
+light_mask = 2
+visibility_layer = 2
+z_index = -1
+position = Vector2(201.33334, 113)
+scale = Vector2(1.0462964, 1.0462962)
 texture = ExtResource("2_eo5cp")
-metadata/_aseprite_wizard_interface_config_ = {
-"animation_section": true,
-"layer_section": true,
-"output_section": true,
-"pending_changes": {},
-"slice_section": true
-}
-metadata/_aseprite_wizard_config_ = {
-"convert_fps_field": 60.0,
-"convert_ms_field": 16.0,
-"convert_to_fps": false,
-"embed_tex": true,
-"i_mode": 1,
-"keep_anim_length": false,
-"layers": [],
-"o_ex_p": "",
-"o_folder": "",
-"o_name": "",
-"only_visible": false,
-"player": "",
-"scale": "1.0",
-"slice": "",
-"source": "res://artwork/kitchenBackground.aseprite",
-"source_uid": 1830767704451377941
-}
-
-[node name="drac" type="Sprite2D" parent="." unique_id=184267607]
-position = Vector2(302, 397)
-scale = Vector2(0.65625, 2.1796875)
-texture = ExtResource("2_hrank")
-
-[node name="Spawner" parent="." unique_id=1337995178 instance=ExtResource("3_eo5cp")]
-position = Vector2(-92, 78)
 
 [node name="ready_count" parent="." unique_id=898958208 instance=ExtResource("4_hrank")]
-position = Vector2(651, 350)
+position = Vector2(171.99998, 85)
+scale = Vector2(2.1349773, 2.1349773)
+
+[node name="hand_open" type="Sprite2D" parent="." unique_id=1357640591]
+visible = false
+z_index = 2
+position = Vector2(3.8146973e-06, 3.8146973e-06)
+scale = Vector2(0.024906235, 0.024906235)
+texture = ExtResource("5_e4ej3")
+
+[node name="hand_closed" type="Sprite2D" parent="." unique_id=1456849674]
+visible = false
+z_index = 2
+rotation = 1.5920296
+scale = Vector2(-0.025862573, -0.025862573)
+texture = ExtResource("6_dexx3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=838983217]
+z_index = -1
+position = Vector2(64, 155)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"full"
+autoplay = "full"
+frame_progress = 0.37887388
+
+[node name="world_boarders" type="StaticBody2D" parent="." unique_id=1454832727]
+position = Vector2(-92, 78)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world_boarders" unique_id=717241339]
+position = Vector2(144, 179)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="world_boarders" unique_id=361527131]
+position = Vector2(280, -111)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="world_boarders" unique_id=1090196626]
+position = Vector2(608, 13)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="world_boarders" unique_id=1624681049]
+position = Vector2(-50, -23)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="Spawner" parent="." unique_id=1337995178 instance=ExtResource("3_eo5cp")]
+position = Vector2(-94.99999, 88.000015)
+
+[node name="Spawner2" parent="." unique_id=1308320440 instance=ExtResource("3_eo5cp")]
+position = Vector2(-96, 15)
+
+[node name="Spawner3" parent="." unique_id=190075806 instance=ExtResource("3_eo5cp")]
+position = Vector2(-94, 149)
+
+[node name="Spawner4" parent="." unique_id=1785729469 instance=ExtResource("3_eo5cp")]
+position = Vector2(478.00003, 10.000001)
+
+[node name="Spawner5" parent="." unique_id=662873951 instance=ExtResource("3_eo5cp")]
+position = Vector2(479.00003, 68)
+
+[node name="Spawner6" parent="." unique_id=1782020852 instance=ExtResource("3_eo5cp")]
+position = Vector2(477, 132)
+
+[node name="Spawner7" parent="." unique_id=1115789517 instance=ExtResource("3_eo5cp")]
+position = Vector2(-98, 207.00002)
+
+[node name="Spawner8" parent="." unique_id=701914145 instance=ExtResource("3_eo5cp")]
+position = Vector2(479.00003, 200.00002)
+
+[node name="Spawner9" parent="." unique_id=1208809637 instance=ExtResource("3_eo5cp")]
+position = Vector2(-42, 206)
+
+[node name="Spawner10" parent="." unique_id=1333719670 instance=ExtResource("3_eo5cp")]
+position = Vector2(-42, 136)
+
+[node name="Spawner11" parent="." unique_id=1483348372 instance=ExtResource("3_eo5cp")]
+position = Vector2(-35, 86)
+
+[node name="Spawner12" parent="." unique_id=2026957120 instance=ExtResource("3_eo5cp")]
+position = Vector2(-37, 22)
+
+[node name="Spawner13" parent="." unique_id=1278721616 instance=ExtResource("3_eo5cp")]
+position = Vector2(434, 201.00002)
+
+[node name="Spawner14" parent="." unique_id=1497472682 instance=ExtResource("3_eo5cp")]
+position = Vector2(436.00003, 133.00002)
+
+[node name="Spawner15" parent="." unique_id=487203814 instance=ExtResource("3_eo5cp")]
+position = Vector2(437, 72)
+
+[node name="Spawner16" parent="." unique_id=1681305864 instance=ExtResource("3_eo5cp")]
+position = Vector2(432, 4)
+
+[node name="better_rice_drop" type="AudioStreamPlayer" parent="." unique_id=1218790831]
+stream = ExtResource("8_8r4el")
+
+[node name="better_rice_pickup" type="AudioStreamPlayer" parent="." unique_id=1601046557]
+stream = ExtResource("9_n80kj")
+volume_db = -3.0
+
+[node name="missed_rice" type="AudioStreamPlayer" parent="." unique_id=513040554]
+stream = ExtResource("10_keobs")
+volume_db = -30.0
+pitch_scale = 0.2
+
+[node name="start" type="AudioStreamPlayer" parent="." unique_id=76349285]
+stream = ExtResource("11_0opri")
+pitch_scale = 0.75
+
+[node name="go" type="AudioStreamPlayer" parent="." unique_id=1540149208]
+stream = ExtResource("12_nhfsr")

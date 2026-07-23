@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://41vaonc3hak5"]
+
+[ext_resource type="FontFile" uid="uid://nh1vfpoxjq3c" path="res://artwork/CastleChunk-Regular.otf" id="1_7lbg8"]
+[ext_resource type="Script" uid="uid://bujgp8ix6eira" path="res://scripts/countdown_timers.gd" id="1_ldo0d"]
+[ext_resource type="AudioStream" uid="uid://32bobcgr5tkq" path="res://sound_effects/ending_sound.wav" id="3_3bitc"]
+[ext_resource type="AudioStream" uid="uid://icd4wirfwb15" path="res://sound_effects/cat_sounds.wav" id="4_kc8wt"]
+[ext_resource type="AudioStream" uid="uid://cfvpun3o3rj7b" path="res://sound_effects/tick(ing).wav" id="5_p5rh4"]
+
+[node name="ready_count" type="Node2D" unique_id=898958208]
+script = ExtResource("1_ldo0d")
+
+[node name="start" type="Label" parent="." unique_id=1380902742]
+visible = false
+offset_left = -43.000015
+offset_top = -16.000006
+offset_right = 184.99998
+offset_bottom = 70.99999
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "READY?"
+metadata/_edit_use_anchors_ = true
+
+[node name="go" type="Label" parent="." unique_id=1760590154]
+visible = false
+offset_left = -17.000002
+offset_top = -16.000002
+offset_right = 194.0
+offset_bottom = 71.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "GO!"
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Label" parent="." unique_id=541609183]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="Label" parent="." unique_id=1535244631]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "2"
+metadata/_edit_use_anchors_ = true
+
+[node name="3" type="Label" parent="." unique_id=1274311564]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "3"
+metadata/_edit_use_anchors_ = true
+
+[node name="4" type="Label" parent="." unique_id=158475993]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "4"
+metadata/_edit_use_anchors_ = true
+
+[node name="5" type="Label" parent="." unique_id=683785736]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "5"
+metadata/_edit_use_anchors_ = true
+
+[node name="6" type="Label" parent="." unique_id=445358246]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "6"
+metadata/_edit_use_anchors_ = true
+
+[node name="7" type="Label" parent="." unique_id=1527233343]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "7"
+metadata/_edit_use_anchors_ = true
+
+[node name="8" type="Label" parent="." unique_id=1030166175]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "8"
+metadata/_edit_use_anchors_ = true
+
+[node name="9" type="Label" parent="." unique_id=148851450]
+visible = false
+offset_left = -7.000001
+offset_top = -15.000002
+offset_right = 204.0
+offset_bottom = 72.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "9"
+metadata/_edit_use_anchors_ = true
+
+[node name="10" type="Label" parent="." unique_id=841793387]
+visible = false
+offset_left = -12.000001
+offset_top = -13.0
+offset_right = 199.0
+offset_bottom = 74.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "10"
+metadata/_edit_use_anchors_ = true
+
+[node name="good_job" type="Label" parent="." unique_id=1094736611]
+visible = false
+offset_left = -57.000008
+offset_top = -16.000008
+offset_right = 244.0
+offset_bottom = 70.99999
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "Good Job!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="awful" type="Label" parent="." unique_id=1563065162]
+visible = false
+offset_left = -55.000008
+offset_top = -17.000008
+offset_right = 246.0
+offset_bottom = 69.99999
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "Awful"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="amazing" type="Label" parent="." unique_id=779547784]
+visible = false
+offset_left = -53.000008
+offset_top = -16.000008
+offset_right = 248.0
+offset_bottom = 70.99999
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "Amazing!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="blnt" type="Label" parent="." unique_id=1326547342]
+visible = false
+offset_left = -65.00001
+offset_top = -8.000004
+offset_right = 617.0
+offset_bottom = 79.0
+scale = Vector2(0.19465663, 0.19953445)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 67
+text = "Better luck next time"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="next_button" type="Button" parent="." unique_id=1284969929]
+visible = false
+offset_left = -19.000002
+offset_top = 15.999999
+offset_right = 81.0
+offset_bottom = 80.0
+scale = Vector2(0.3845508, 0.3845508)
+theme_override_fonts/font = ExtResource("1_7lbg8")
+theme_override_font_sizes/font_size = 43
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="ending_sound" type="AudioStreamPlayer" parent="." unique_id=1155385540]
+stream = ExtResource("3_3bitc")
+
+[node name="start_counting" type="AudioStreamPlayer" parent="." unique_id=1715050314]
+stream = ExtResource("4_kc8wt")
+pitch_scale = 0.5
+
+[node name="counting_down" type="AudioStreamPlayer" parent="." unique_id=278482636]
+stream = ExtResource("5_p5rh4")
+
+[connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]

@@ -13,7 +13,7 @@ var x_location = 0
 func _ready() -> void:
 	$Spawner.hide()
 	$Spawner/shadow.hide()
-	var timer_range = randf_range(5,6.5)
+	var timer_range = randf_range(10,12)
 	$Spawner/Timer.wait_time = timer_range
 	$Spawner/Timer.start()
 
@@ -59,7 +59,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	Global.button_pressed_frsound_true()
-	print("you got me")
 	button_clicked = true
 	
 	if button_clicked == true:
@@ -75,15 +74,15 @@ func _on_button_pressed() -> void:
 	#updates win condition when button clicked	#can be tweaked if needed
 	if Global.amount_rice_clicked <= 20:
 		Global.make_end_2()
-		print("1")
+		
 	elif Global.amount_rice_clicked > 20 and Global.amount_rice_clicked <= 25:
 		Global.make_end_4()
-		print("2")
+		
 	elif Global.amount_rice_clicked > 25 and Global.amount_rice_clicked <= 30:
 		Global.make_end_1()
-		print("3")
+		
 	elif Global.amount_rice_clicked > 30:
 		Global.make_end_3()
-		print("4")
+		
 	else:
 		print("rice count error")

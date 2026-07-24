@@ -93,7 +93,6 @@ func make_end_4():
 func make_end_0():
 	end_text = 0
 	
-	
 func add_rice():
 	amount_rice_clicked += 1 
 

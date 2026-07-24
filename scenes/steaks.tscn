@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bo3fjmyhwiox6"]
+
+[ext_resource type="Script" uid="uid://cj2rwylb7hetk" path="res://scripts/steak.gd" id="1_71jm1"]
+[ext_resource type="Texture2D" uid="uid://dp4acff0o1cld" path="res://artwork2(prevent merge issues)/COUNTDOWN_STAKE.png" id="1_leljr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 7.0040207
+height = 51.999573
+
+[node name="steaks" type="Node2D" unique_id=2064901200]
+
+[node name="steak" type="CharacterBody2D" parent="." unique_id=934372330]
+script = ExtResource("1_71jm1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="steak" unique_id=731159167]
+position = Vector2(1.1920929e-07, 0)
+rotation = 1.566718
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="steak" unique_id=2992510]
+position = Vector2(0, -1)
+texture = ExtResource("1_leljr")
+
+[node name="Timer" type="Timer" parent="." unique_id=1099497845]
+wait_time = 3.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="steak" method="_on_timer_timeout"]

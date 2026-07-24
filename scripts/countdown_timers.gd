@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 #displays texts going (ready,3,2,1,go)
 func start_go():
 	$start.show()
-	$"../start".play()
+	$"../start".play() # start sound and go sound need dragging into scenes with this file
 	await get_tree().create_timer(1).timeout
 	$start.hide()
 	$"3".show()
@@ -131,6 +131,7 @@ func countdown_from_10():
 	
 	#should use switch case statement but idc 
 func display_end_text():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$ending_sound.play()
 	Global.game_is_over()
 	if Global.end_text == 0:
@@ -148,8 +149,9 @@ func display_end_text():
 	Global.text_stop()
 	#shows next button
 	$next_button.show()
-
+	
 # clicking next will cause rice to re-appear, this is intened do not worry
 func _on_next_button_pressed() -> void:
 	print("goes next level")
 	Global.game_is_not_over()
+	get_tree().change_scene_to_file("res://scenes/dodge_the_stakes.tscn")

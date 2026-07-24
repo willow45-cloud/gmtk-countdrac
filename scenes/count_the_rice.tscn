@@ -5,14 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://bbc2ecgo7odht" path="res://artwork/kitchenBackground.png" id="2_eo5cp"]
 [ext_resource type="PackedScene" uid="uid://vcrukcf7srmc" path="res://scenes/rice_spawner.tscn" id="3_eo5cp"]
 [ext_resource type="PackedScene" uid="uid://41vaonc3hak5" path="res://scenes/countdown_timers.tscn" id="4_hrank"]
-[ext_resource type="Texture2D" uid="uid://c2xpyyn3hh7ha" path="res://artwork/open-hands-isolated-transparent-background-png-psd_888962-2104-816525387.jpg" id="5_e4ej3"]
-[ext_resource type="Texture2D" uid="uid://ciu8o36jucgjb" path="res://artwork/left-hand-closed-titan-90081nl01j-analog-watch-for-me-11562894776fxfq1aqacd-3308364757.png" id="6_dexx3"]
+[ext_resource type="Texture2D" uid="uid://cucciid7v0c7q" path="res://artwork2(prevent merge issues)/COUNT HANDS1.png" id="5_p2mru"]
+[ext_resource type="Texture2D" uid="uid://b82cmkn00a8i6" path="res://artwork2(prevent merge issues)/COUNT HANDS2.png" id="6_dfd84"]
 [ext_resource type="Texture2D" uid="uid://c4tarmf1jcatf" path="res://artwork/RiceBag.png" id="7_dexx3"]
 [ext_resource type="AudioStream" uid="uid://hti8kyok3pgm" path="res://sound_effects/better_rice_drop.wav" id="8_8r4el"]
 [ext_resource type="AudioStream" uid="uid://cq3qik7gu65dm" path="res://sound_effects/better_rice_pickup.wav" id="9_n80kj"]
 [ext_resource type="AudioStream" uid="uid://bs2yemxx0b368" path="res://sound_effects/missed_rice.wav" id="10_keobs"]
 [ext_resource type="AudioStream" uid="uid://dothpp0bmgiyj" path="res://sound_effects/low_cat.wav" id="11_0opri"]
 [ext_resource type="AudioStream" uid="uid://icd4wirfwb15" path="res://sound_effects/cat_sounds.wav" id="12_nhfsr"]
+[ext_resource type="Texture2D" uid="uid://dd5karlj41vkr" path="res://artwork2(prevent merge issues)/Kitchen floor.png" id="14_p2mru"]
+[ext_resource type="Texture2D" uid="uid://cfdk46gcjci65" path="res://artwork2(prevent merge issues)/COUNT WALK.png" id="15_asw3j"]
+[ext_resource type="Texture2D" uid="uid://i785bc2rmxh8" path="res://artwork2(prevent merge issues)/count shocked.png" id="16_fmhbr"]
+[ext_resource type="Texture2D" uid="uid://wvsevknsma3q" path="res://artwork2(prevent merge issues)/olaf_push_anim_v1.png" id="17_fmhbr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8r4el"]
 atlas = ExtResource("7_dexx3")
@@ -44,6 +48,169 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
 size = Vector2(2091, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc30s"]
+atlas = ExtResource("15_asw3j")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61f4x"]
+atlas = ExtResource("15_asw3j")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di5io"]
+atlas = ExtResource("15_asw3j")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lbrw"]
+atlas = ExtResource("15_asw3j")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skpm6"]
+atlas = ExtResource("16_fmhbr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_libra"]
+atlas = ExtResource("16_fmhbr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc30s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61f4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di5io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lbrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc30s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61f4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di5io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lbrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skpm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_libra")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_asw3j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("count:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-63, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_fmhbr"]
+resource_name = "count_walk"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("count:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-63, 165.555), Vector2(112.285, 164.975)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nc30s"]
+_data = {
+&"RESET": SubResource("Animation_asw3j"),
+&"count_walk": SubResource("Animation_fmhbr")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d72vw"]
+atlas = ExtResource("17_fmhbr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdmxp"]
+atlas = ExtResource("17_fmhbr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0pjd"]
+atlas = ExtResource("17_fmhbr")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3sck"]
+atlas = ExtResource("17_fmhbr")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3piny"]
+atlas = ExtResource("17_fmhbr")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1mv5"]
+atlas = ExtResource("17_fmhbr")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8ibk"]
+atlas = ExtResource("17_fmhbr")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiyeb"]
+atlas = ExtResource("17_fmhbr")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0u6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d72vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdmxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0pjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3sck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3piny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1mv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8ibk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiyeb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="main_scene" type="Node2D" unique_id=1565350175]
 script = ExtResource("1_al55v")
 
@@ -65,30 +232,30 @@ scale = Vector2(1.0462964, 1.0462962)
 texture = ExtResource("2_eo5cp")
 
 [node name="ready_count" parent="." unique_id=898958208 instance=ExtResource("4_hrank")]
-position = Vector2(171.99998, 85)
+position = Vector2(197, 111)
 scale = Vector2(2.1349773, 2.1349773)
 
 [node name="hand_open" type="Sprite2D" parent="." unique_id=1357640591]
 visible = false
 z_index = 2
 position = Vector2(3.8146973e-06, 3.8146973e-06)
-scale = Vector2(0.024906235, 0.024906235)
-texture = ExtResource("5_e4ej3")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_p2mru")
 
 [node name="hand_closed" type="Sprite2D" parent="." unique_id=1456849674]
 visible = false
 z_index = 2
 rotation = 1.5920296
-scale = Vector2(-0.025862573, -0.025862573)
-texture = ExtResource("6_dexx3")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_dfd84")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=838983217]
-z_index = -1
-position = Vector2(64, 155)
+[node name="rice" type="AnimatedSprite2D" parent="." unique_id=838983217]
+z_index = 1
+position = Vector2(212, 155)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"full"
 autoplay = "full"
-frame_progress = 0.37887388
+frame_progress = 0.39844126
 
 [node name="world_boarders" type="StaticBody2D" parent="." unique_id=1454832727]
 position = Vector2(-92, 78)
@@ -177,3 +344,30 @@ pitch_scale = 0.75
 
 [node name="go" type="AudioStreamPlayer" parent="." unique_id=1540149208]
 stream = ExtResource("12_nhfsr")
+
+[node name="push_meow" type="AudioStreamPlayer" parent="." unique_id=820484962]
+stream = ExtResource("12_nhfsr")
+pitch_scale = 1.5
+
+[node name="footsteps" type="AudioStreamPlayer" parent="." unique_id=110115579]
+volume_db = 4.0
+
+[node name="KitchenFloor" type="Sprite2D" parent="." unique_id=882540592]
+visible = false
+z_index = -1
+position = Vector2(202.55556, 112.5)
+scale = Vector2(1.0601852, 1.0601852)
+texture = ExtResource("14_p2mru")
+
+[node name="count" type="AnimatedSprite2D" parent="." unique_id=292260069]
+position = Vector2(-63, 160)
+sprite_frames = SubResource("SpriteFrames_57qmd")
+
+[node name="count_the_animations" type="AnimationPlayer" parent="." unique_id=2002504381]
+libraries/ = SubResource("AnimationLibrary_nc30s")
+
+[node name="olaf" type="AnimatedSprite2D" parent="." unique_id=1658815658]
+position = Vector2(171, 88)
+sprite_frames = SubResource("SpriteFrames_d0u6y")
+frame = 7
+frame_progress = 0.12231282

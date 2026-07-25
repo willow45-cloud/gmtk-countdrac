@@ -408,11 +408,13 @@ frame_progress = 0.089471854
 libraries/ = SubResource("AnimationLibrary_p068m")
 
 [node name="Arrow" type="Sprite2D" parent="." unique_id=948180767]
+visible = false
 z_index = -1
 position = Vector2(34, 85)
 texture = ExtResource("9_nndud")
 
 [node name="Arrow2" type="Sprite2D" parent="." unique_id=1983297279]
+visible = false
 z_index = -1
 position = Vector2(35, 120)
 rotation = 3.1415927
@@ -441,29 +443,25 @@ theme_override_font_sizes/font_size = 54
 text = "Game Over"
 
 [node name="up" type="Label" parent="." unique_id=167173716]
-offset_left = -88.0
-offset_top = 17.0
-offset_right = 158.0
-offset_bottom = 154.0
+visible = false
+offset_left = 25.0
+offset_top = 43.0
+offset_right = 271.0
+offset_bottom = 180.0
 theme_override_fonts/font = ExtResource("13_5x450")
 theme_override_font_sizes/font_size = 19
-text = "A
-UP
+text = "UP
 "
-horizontal_alignment = 1
 
 [node name="down" type="Label" parent="." unique_id=1269418982]
-offset_left = -88.0
-offset_top = 139.0
-offset_right = 158.0
-offset_bottom = 276.0
+visible = false
+offset_left = 15.0
+offset_top = 135.0
+offset_right = 261.0
+offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("13_5x450")
 theme_override_font_sizes/font_size = 19
-text = "D
-DOWN
-
-"
-horizontal_alignment = 1
+text = "DOWN"
 
 [node name="ending_sound" type="AudioStreamPlayer" parent="." unique_id=114464879]
 stream = ExtResource("14_gytje")
@@ -472,18 +470,5 @@ stream = ExtResource("14_gytje")
 stream = ExtResource("15_ignm5")
 volume_db = -0.5
 
-[node name="next_button" type="Button" parent="." unique_id=788115551]
-visible = false
-offset_left = 157.0
-offset_top = 144.0
-offset_right = 257.0
-offset_bottom = 208.0
-scale = Vector2(0.75, 0.75)
-theme_override_fonts/font = ExtResource("13_5x450")
-theme_override_font_sizes/font_size = 43
-text = "Next"
-metadata/_edit_use_anchors_ = true
-
 [connection signal="area_entered" from="CharacterBody2D/dancing_drac/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="CharacterBody2D/dancing_drac/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]

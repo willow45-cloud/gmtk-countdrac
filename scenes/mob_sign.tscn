@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://b5t7h3yyoahae"]
 
+[ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://artwork/icon.svg" id="1_dbvsa"]
 [ext_resource type="Script" uid="uid://df4jvbdh2q7r0" path="res://scripts/sign_movement.gd" id="1_w1dvf"]
-[ext_resource type="Texture2D" uid="uid://yabensf7cjio" path="res://artwork2(prevent merge issues)/MobSign.png" id="2_qshfy"]
-[ext_resource type="Texture2D" uid="uid://wjghe0ftihf3" path="res://artwork2(prevent merge issues)/apple-fruit-1490995742.jpg" id="3_oxfjc"]
-[ext_resource type="Texture2D" uid="uid://chohm8vooo68e" path="res://artwork2(prevent merge issues)/fresh-single-orange-fruit-isolated-on-transparent-background-png-3841364567.png" id="4_33j2d"]
-[ext_resource type="Texture2D" uid="uid://dt47e68txo2ri" path="res://artwork2(prevent merge issues)/pear-451987403.jpg" id="5_un4ld"]
-[ext_resource type="Texture2D" uid="uid://dgc8gt8p05woq" path="res://artwork2(prevent merge issues)/Kiwi-Fruit-PNG-Transparent-Image-1490140891.png" id="6_12uvl"]
 
 [sub_resource type="Animation" id="Animation_qshfy"]
 length = 0.001
@@ -80,37 +76,44 @@ scale = Vector2(0.3983855, 0.5032425)
 script = ExtResource("1_w1dvf")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1950609246]
-position = Vector2(0, -1.9871136)
-scale = Vector2(1.4532638, 1.4532638)
-texture = ExtResource("2_qshfy")
+self_modulate = Color(0.23713276, 0.16166642, 0, 1)
+texture = ExtResource("1_dbvsa")
 
 [node name="Button" type="Button" parent="CharacterBody2D/Sprite2D" unique_id=1293400821]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -39.72646
-offset_top = -87.51011
-offset_right = -31.72646
-offset_bottom = -79.51011
-scale = Vector2(9.988085, 10.401801)
+offset_left = -70.283676
+offset_top = -69.54897
+offset_right = -62.283676
+offset_bottom = -59.727737
+scale = Vector2(17.931208, 14.162979)
+
+[node name="stick" type="Sprite2D" parent="CharacterBody2D/Sprite2D" unique_id=758561085]
+position = Vector2(-0.9999995, 105)
+scale = Vector2(-0.2400024, 1)
+texture = ExtResource("1_dbvsa")
 
 [node name="head_type1" type="Sprite2D" parent="CharacterBody2D/Sprite2D" unique_id=104511694]
-position = Vector2(-1.8343221, -46.1854)
-scale = Vector2(0.030689148, 0.032547224)
-texture = ExtResource("3_oxfjc")
+visible = false
+scale = Vector2(0.4027676, 0.4271532)
+texture = ExtResource("1_dbvsa")
 
 [node name="head_type2" type="Sprite2D" parent="CharacterBody2D/Sprite2D" unique_id=1961612416]
-position = Vector2(-1.8343221, -46.1854)
-scale = Vector2(0.030689148, 0.032547224)
-texture = ExtResource("4_33j2d")
+visible = false
+self_modulate = Color(0, 1, 0, 1)
+scale = Vector2(0.4027676, 0.4271532)
+texture = ExtResource("1_dbvsa")
 
 [node name="head_type3" type="Sprite2D" parent="CharacterBody2D/Sprite2D" unique_id=562338834]
-position = Vector2(-1.8343221, -46.1854)
-scale = Vector2(0.030689148, 0.032547224)
-texture = ExtResource("5_un4ld")
+visible = false
+self_modulate = Color(1, 0.41568628, 0, 1)
+scale = Vector2(0.4027676, 0.4271532)
+texture = ExtResource("1_dbvsa")
 
 [node name="head_type4" type="Sprite2D" parent="CharacterBody2D/Sprite2D" unique_id=1076601019]
-position = Vector2(-1.8343221, -46.1854)
-scale = Vector2(0.030689148, 0.032547224)
-texture = ExtResource("6_12uvl")
+visible = false
+self_modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.4027676, 0.4271532)
+texture = ExtResource("1_dbvsa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1990032248]
 libraries/ = SubResource("AnimationLibrary_qshfy")

@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 			$"../down".hide()
 			$"../Arrow".hide()
 			$"../Arrow2".hide()
-			$"../next_button".show()
+			
 			$"../ending_sound".play()
 			await get_tree().create_timer(2).timeout
 			AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
@@ -74,9 +74,3 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)
 	drac_dead = true
-	
-	
-	
-	
-	
-	

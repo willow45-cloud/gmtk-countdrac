@@ -5,9 +5,6 @@ var move_speed = 100
 var cutscene = true
 
 func _ready() -> void:
-	Global.spawn_button_false()
-	$next_button.hide()
-	$go.play()
 	Global.game_is_over()
 	$hand_open.hide()
 	$hand_closed.hide()
@@ -66,14 +63,3 @@ func _process(delta: float) -> void:
 		$amount_collected.text = str(Global.amount_rice_clicked) + "/30 rice"
 	else:
 		pass
-		
-		
-	if Global.spawn_button == true:
-		$next_button.show()
-		
-		
-
-func _on_next_button_pressed() -> void:
-	Global.game_is_not_over()
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
-	get_tree().change_scene_to_file("res://scenes/dodge_the_stakes.tscn")

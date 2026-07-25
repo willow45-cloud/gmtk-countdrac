@@ -35,61 +35,49 @@ func _ready():
 		else:
 			pass
 	
-	await get_tree().create_timer(5).timeout  # THIS ONE
+	await get_tree().create_timer(2).timeout
 	playing = true
-	#print(playing)
 	await get_tree().create_timer(1).timeout
 	$"../AnimationPlayer".play("wiggle")
 	await get_tree().create_timer(2).timeout
-	$"../AnimationPlayer".stop()
 	$"../AnimationPlayer".play("flip")
-	await get_tree().create_timer(1).timeout
 	#play flip animation here
 	head_type_1.show()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	$"../AnimationPlayer".play("wiggle")
 	
 func _process(delta: float) -> void:
+	
 	if playing == true:
 		#overkill
-		#print("location issue")
-		#print($Sprite2D.global_position.y, $Sprite2D.global_position.x)
-		if $Sprite2D.global_position.y > -50 and $Sprite2D.global_position.y < -45: # top signs
+		if $Sprite2D.global_position.y == -50: # top signs
 			sign_type = 1 
-			#print("1")
-		if $Sprite2D.global_position.y < 260 and $Sprite2D.global_position.y > 255: # bottom signs
+		if $Sprite2D.global_position.y == 260: # bottom signs
 			sign_type = 2
-			#print("2")
-		if $Sprite2D.global_position.x > -60 and $Sprite2D.global_position.x < -55: # left signs
+		if $Sprite2D.global_position.x == -60: # left signs
 			sign_type = 3 
-			#print("3")
-		if $Sprite2D.global_position.x < 440 and $Sprite2D.global_position.x > 430:# ight signs 
+		if $Sprite2D.global_position.x == 440: # right signs 
 			sign_type = 4
-			#print("4")
 		
 		#very overkill
 		if sign_type == 1:
-			if $Sprite2D.global_position.y <= 25:
-			#	print("10")
+			if $Sprite2D.global_position.y <= 40:
 				velocity.y = speed * 1
 				move_and_slide()
 			
 		if sign_type == 2:
-			if $Sprite2D.global_position.y >= 190:
-				#print("20")
+			if $Sprite2D.global_position.y >= 170:
 				velocity.y = speed * -1
 				move_and_slide()
 		
 		if sign_type == 3:
-			if $Sprite2D.global_position.x <= 25:
-				#print("30")
+			if $Sprite2D.global_position.x <= 45:
 				velocity.x = speed * 1
 				move_and_slide()
 		
 
 		if sign_type == 4:
-			if $Sprite2D.global_position.x >= 350:
-				#print("40")
+			if $Sprite2D.global_position.x >= 340:
 				velocity.x = speed * -1
 				move_and_slide()
 

@@ -11,7 +11,7 @@ var button_pressed_frsound = false
 var mini_game_over = false
 var grant_chosen = false
 var game_won = 0
-var spawn_button = false
+
 
 func _ready() -> void:
 	what_counter_doing = 0
@@ -121,13 +121,3 @@ func game_won_1():
 	
 func game_won_2():	
 	game_won = 2		
-	
-	
-func spawn_button_true():
-	spawn_button = true
-	
-func spawn_button_false():
-	spawn_button = false
-	
-	
-	

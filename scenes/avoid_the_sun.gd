@@ -6,7 +6,19 @@ func _ready() -> void:
 	$CharacterBody2D/Dracula.play("Draculawalk")
 	$AnimationPlayer.play("Movearound")
 	await get_tree().create_timer(2).timeout
-	
+	$End.visible = not visible
+	$ToolTip.visible = not visible
+	$GameTimer/Visual.visible = not visible
+	$Node2D/AnimatedSprite2D.play("default")
+	$CharacterBody2D/Dracula.play("Draculawalk")
+	$AnimationPlayer.play("Movearound")
+	await get_tree().create_timer(2).timeout
+	$CharacterBody2D/Dracula.stop()
+	#$TextureRect2.texture = (dayscene)
+	$GameTimer.start()
+	$CharacterBody2D/Dracula.play("Fear")
+	$GameTimer/Visual.visible = visible
+	$ToolTip.visible = visible
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

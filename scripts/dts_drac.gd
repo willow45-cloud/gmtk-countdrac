@@ -61,11 +61,15 @@ func _process(delta: float) -> void:
 			Global.game_is_over()
 			$"../ready_count".hide()
 			$"../game_over".show()
-			$"../ending_sound".play()
 			$"../up".hide()
 			$"../down".hide()
 			$"../Arrow".hide()
 			$"../Arrow2".hide()
+			
+			$"../ending_sound".play()
+			await get_tree().create_timer(2).timeout
+			AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+			
 			
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)

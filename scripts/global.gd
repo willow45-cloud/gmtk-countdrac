@@ -9,6 +9,9 @@ var auto_start_countdown = false
 var amount_rice_clicked = 0 
 var button_pressed_frsound = false
 var mini_game_over = false
+var grant_chosen = false
+var game_won = 0
+
 
 func _ready() -> void:
 	what_counter_doing = 0
@@ -103,5 +106,18 @@ func button_pressed_frsound_false():
 	button_pressed_frsound = false
 	
 	
+func grant_chosen_true():
+	grant_chosen = true
 	
+func grant_chosen_false():
+	grant_chosen = false	
 	
+func game_won_0():	
+	game_won = 0	
+	
+func game_won_1():	
+	game_won = 1		
+
+	
+func game_won_2():	
+	game_won = 2		

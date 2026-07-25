@@ -42,3 +42,4 @@ func _process(delta: float) -> void:
 		$down.hide()
 		$Arrow.hide()
 		$Arrow2.hide()
+	

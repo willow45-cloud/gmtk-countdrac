@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cfdk46gcjci65" path="res://artwork2(prevent merge issues)/COUNT WALK.png" id="15_asw3j"]
 [ext_resource type="Texture2D" uid="uid://i785bc2rmxh8" path="res://artwork2(prevent merge issues)/count shocked.png" id="16_fmhbr"]
 [ext_resource type="Texture2D" uid="uid://wvsevknsma3q" path="res://artwork2(prevent merge issues)/olaf_push_anim_v1.png" id="17_fmhbr"]
+[ext_resource type="Texture2D" uid="uid://dwor8jo3oemgx" path="res://artwork2(prevent merge issues)/count shocked V2.png" id="17_nc30s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8r4el"]
 atlas = ExtResource("7_dexx3")
@@ -72,6 +73,10 @@ region = Rect2(0, 0, 128, 128)
 atlas = ExtResource("16_fmhbr")
 region = Rect2(128, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw4cl"]
+atlas = ExtResource("17_nc30s")
+region = Rect2(256, 0, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
 animations = [{
 "frames": [{
@@ -101,6 +106,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_skpm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_libra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw4cl")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_libra")
@@ -362,6 +373,8 @@ texture = ExtResource("14_p2mru")
 [node name="count" type="AnimatedSprite2D" parent="." unique_id=292260069]
 position = Vector2(-63, 160)
 sprite_frames = SubResource("SpriteFrames_57qmd")
+frame = 11
+frame_progress = 1.0
 
 [node name="count_the_animations" type="AnimationPlayer" parent="." unique_id=2002504381]
 libraries/ = SubResource("AnimationLibrary_nc30s")

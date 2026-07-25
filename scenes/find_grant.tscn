@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://ckoqu05uacal7"]
+
+[ext_resource type="Script" uid="uid://vvwsw3g2n0qg" path="res://scripts/find_grant.gd" id="1_pgw66"]
+[ext_resource type="Texture2D" uid="uid://bbc2ecgo7odht" path="res://artwork/kitchenBackground.png" id="1_vlwfk"]
+[ext_resource type="PackedScene" uid="uid://b5t7h3yyoahae" path="res://scenes/mob_sign.tscn" id="2_mi3e0"]
+[ext_resource type="PackedScene" uid="uid://41vaonc3hak5" path="res://scenes/countdown_timers.tscn" id="3_48ts3"]
+[ext_resource type="AudioStream" uid="uid://icd4wirfwb15" path="res://sound_effects/cat_sounds.wav" id="4_6kfdj"]
+[ext_resource type="AudioStream" uid="uid://dothpp0bmgiyj" path="res://sound_effects/low_cat.wav" id="5_pgw66"]
+[ext_resource type="FontFile" uid="uid://nh1vfpoxjq3c" path="res://artwork/CastleChunk-Regular.otf" id="7_xymxv"]
+[ext_resource type="AudioStream" uid="uid://32bobcgr5tkq" path="res://sound_effects/ending_sound.wav" id="8_eas0g"]
+
+[node name="Find_grant" type="Node2D" unique_id=510302662]
+script = ExtResource("1_pgw66")
+
+[node name="background" type="Sprite2D" parent="." unique_id=726180968]
+position = Vector2(202, 115)
+scale = Vector2(1.1712962, 1.1712962)
+texture = ExtResource("1_vlwfk")
+
+[node name="mob_sign" parent="." unique_id=391719900 instance=ExtResource("2_mi3e0")]
+position = Vector2(45, 260)
+
+[node name="mob_sign2" parent="." unique_id=1656801502 instance=ExtResource("2_mi3e0")]
+position = Vector2(150, 260)
+
+[node name="mob_sign3" parent="." unique_id=280798919 instance=ExtResource("2_mi3e0")]
+position = Vector2(246, 260)
+
+[node name="mob_sign6" parent="." unique_id=41518997 instance=ExtResource("2_mi3e0")]
+position = Vector2(127, -50)
+rotation = 3.1415927
+
+[node name="mob_sign7" parent="." unique_id=1083932979 instance=ExtResource("2_mi3e0")]
+position = Vector2(221, -50)
+rotation = 3.1415927
+
+[node name="mob_sign8" parent="." unique_id=1194312714 instance=ExtResource("2_mi3e0")]
+position = Vector2(319, -50)
+rotation = 3.1415927
+
+[node name="mob_sign10" parent="." unique_id=858871257 instance=ExtResource("2_mi3e0")]
+position = Vector2(-60, 98)
+rotation = 1.5707964
+
+[node name="mob_sign11" parent="." unique_id=593299982 instance=ExtResource("2_mi3e0")]
+position = Vector2(-60, 29)
+rotation = 1.5707964
+
+[node name="mob_sign13" parent="." unique_id=766187828 instance=ExtResource("2_mi3e0")]
+position = Vector2(440, 112.00001)
+rotation = -1.5707964
+
+[node name="mob_sign14" parent="." unique_id=552558153 instance=ExtResource("2_mi3e0")]
+position = Vector2(440, 178)
+rotation = -1.5707964
+
+[node name="ready_count" parent="." unique_id=898958208 instance=ExtResource("3_48ts3")]
+position = Vector2(198, 98)
+scale = Vector2(2, 2)
+
+[node name="go" type="AudioStreamPlayer" parent="." unique_id=1905304587]
+stream = ExtResource("4_6kfdj")
+
+[node name="start" type="AudioStreamPlayer" parent="." unique_id=1023040779]
+stream = ExtResource("5_pgw66")
+pitch_scale = 0.75
+
+[node name="next" type="Button" parent="." unique_id=805929442]
+visible = false
+offset_left = 147.0
+offset_top = 129.0
+offset_right = 232.0
+offset_bottom = 182.0
+theme_override_fonts/font = ExtResource("7_xymxv")
+theme_override_font_sizes/font_size = 36
+text = "Next"
+
+[node name="awful" type="Label" parent="." unique_id=617164481]
+visible = false
+offset_left = 112.0
+offset_top = 66.0
+offset_right = 378.0
+offset_bottom = 203.0
+theme_override_fonts/font = ExtResource("7_xymxv")
+theme_override_font_sizes/font_size = 54
+text = "Awful
+"
+
+[node name="amazing" type="Label" parent="." unique_id=1301749730]
+visible = false
+offset_left = 70.0
+offset_top = 68.0
+offset_right = 336.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("7_xymxv")
+theme_override_font_sizes/font_size = 54
+text = "Amazing!"
+
+[node name="ending_sound" type="AudioStreamPlayer" parent="." unique_id=463995281]
+stream = ExtResource("8_eas0g")
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]

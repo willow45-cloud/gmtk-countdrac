@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DraculaWarioware"
-run/main_scene="uid://c3bhfkokdx774"
+run/main_scene="uid://b7io7gfxcmffn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://artwork/icon.svg"
 

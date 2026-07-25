@@ -384,3 +384,17 @@ position = Vector2(171, 88)
 sprite_frames = SubResource("SpriteFrames_d0u6y")
 frame = 7
 frame_progress = 0.12231282
+
+[node name="next_button" type="Button" parent="." unique_id=1353925460]
+visible = false
+offset_left = 157.0
+offset_top = 144.0
+offset_right = 257.0
+offset_bottom = 208.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("2_dvfs6")
+theme_override_font_sizes/font_size = 43
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="next_button" to="." method="_on_next_button_pressed"]

@@ -1,21 +1,268 @@
 [gd_scene format=3 uid="uid://c3bhfkokdx774"]
 
-[ext_resource type="Texture2D" uid="uid://cb4sg65t3lbim" path="res://artwork/icon.svg" id="1_ubphx"]
+[ext_resource type="Script" uid="uid://c86lb6ojjolkj" path="res://scenes/avoid_the_sun.gd" id="1_xq7m5"]
 [ext_resource type="Script" uid="uid://ebft2jg8nrc5" path="res://scripts/dracula.gd" id="2_pfdry"]
+[ext_resource type="Script" uid="uid://dmlg5vvbxa263" path="res://scenes/sun.gd" id="3_7u0ky"]
+[ext_resource type="Texture2D" uid="uid://cw6sp0301awiu" path="res://artwork/countdown_sun and moon.png" id="3_651n6"]
+[ext_resource type="Texture2D" uid="uid://bdca2sil36rv5" path="res://artwork/NightSunDodgeBackground.png" id="4_2o8ac"]
+[ext_resource type="Script" uid="uid://cf0jo8coviii" path="res://scenes/visual.gd" id="4_h8eg0"]
+[ext_resource type="Script" uid="uid://bbaag6qlotgst" path="res://scenes/game_timer.gd" id="5_h8eg0"]
+[ext_resource type="Texture2D" uid="uid://cfdk46gcjci65" path="res://artwork2(prevent merge issues)/COUNT WALK.png" id="6_651n6"]
+[ext_resource type="FontFile" uid="uid://nh1vfpoxjq3c" path="res://artwork/CastleChunk-Regular.otf" id="6_e51gv"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vbqh6"]
-load_path = "res://.godot/imported/1920x1080-light-pink-solid-color-background-3991086767.jpg-e9131256141bcd2c8d5901dc2ccfa295.ctex"
+[sub_resource type="Gradient" id="Gradient_651n6"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0.109857045, 0.15374571, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xrivr"]
+gradient = SubResource("Gradient_651n6")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 29.0953
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8s6v"]
+atlas = ExtResource("3_651n6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wab5"]
+atlas = ExtResource("3_651n6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_651n6"]
+atlas = ExtResource("3_651n6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b1lj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8s6v")
+}],
+"loop": 1,
+"name": &"Sun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wab5")
+}],
+"loop": 2,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_651n6")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o8ac"]
+atlas = ExtResource("6_651n6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr5so"]
+atlas = ExtResource("6_651n6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0yrl"]
+atlas = ExtResource("6_651n6")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8one"]
+atlas = ExtResource("6_651n6")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o8ac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr5so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0yrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8one")
+}],
+"loop": 1,
+"name": &"Draculawalk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrivr"]
+radius = 28.274994
+height = 112.97
+
+[sub_resource type="Animation" id="Animation_xb8ey"]
+resource_name = "Dracwalk"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-31, 157), Vector2(193.48, 157)]
+}
+
+[sub_resource type="Animation" id="Animation_2o8ac"]
+resource_name = "Movearound"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1, 1.1, 1.9666667),
+"transitions": PackedFloat32Array(1, 0.594604, 1, 1),
+"update": 0,
+"values": [Vector2(27.69231, 5.384617), Vector2(39.177, 26.685), Vector2(36.597, 32.506), Vector2(-35.498, 31.79)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-31, 157), Vector2(193.48, 157)]
+}
+
+[sub_resource type="Animation" id="Animation_v8s6v"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(27.69231, 5.384617)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-31, 157)]
+}
+
+[sub_resource type="Animation" id="Animation_7fp5f"]
+resource_name = "Rise"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1.0717757, 0.8408963),
+"update": 0,
+"values": [Vector2(-35.498, 31.79), Vector2(3.846, -6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5wab5"]
+_data = {
+&"Dracwalk": SubResource("Animation_xb8ey"),
+&"Movearound": SubResource("Animation_2o8ac"),
+&"RESET": SubResource("Animation_v8s6v"),
+&"Rise": SubResource("Animation_7fp5f")
+}
 
 [node name="AvoidTheSun" type="Node2D" unique_id=1568743786]
+script = ExtResource("1_xq7m5")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1665399573]
-offset_right = 780.0
-offset_bottom = 217.0
-texture = SubResource("CompressedTexture2D_vbqh6")
+offset_right = 384.0
+offset_bottom = 215.0
+texture = SubResource("GradientTexture2D_xrivr")
 expand_mode = 1
 
-[node name="Dracula" type="Sprite2D" parent="." unique_id=165544301]
-position = Vector2(137, 119)
-scale = Vector2(0.4322949, 0.4322949)
-texture = ExtResource("1_ubphx")
+[node name="Node2D" type="Node2D" parent="." unique_id=23678491]
+position = Vector2(192, 64)
+scale = Vector2(2.6, 2.6)
+
+[node name="Sun" type="Area2D" parent="Node2D" unique_id=1891852770]
+position = Vector2(2.065384, -0.13846207)
+script = ExtResource("3_7u0ky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sun" unique_id=1247053804]
+position = Vector2(-2.065383, -5.2461543)
+shape = SubResource("CircleShape2D_xrivr")
+debug_color = Color(0, 0.6, 0.69803923, 0.4392157)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D" unique_id=536478421]
+position = Vector2(27.69231, 5.384617)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_b1lj4")
+animation = &"new_animation"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=167241570]
+offset_right = 385.0
+offset_bottom = 216.0
+texture = ExtResource("4_2o8ac")
+expand_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1201263844]
+position = Vector2(-31, 157)
 script = ExtResource("2_pfdry")
+
+[node name="Dracula" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=471144206]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_xrivr")
+animation = &"Draculawalk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=955417269]
+shape = SubResource("CapsuleShape2D_xrivr")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=881681026]
+script = ExtResource("5_h8eg0")
+_count = 3
+
+[node name="Visual" type="Label" parent="GameTimer" unique_id=2030103548]
+visible = false
+offset_left = 138.0
+offset_top = 45.0
+offset_right = 256.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
+theme_override_fonts/font = ExtResource("6_e51gv")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_h8eg0")
+actiondisplayed = "DUCK"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=406644649]
+libraries/ = SubResource("AnimationLibrary_5wab5")
+
+[connection signal="body_entered" from="Node2D/Sun" to="CharacterBody2D" method="_on_sun_body_entered"]
+[connection signal="timeout" from="GameTimer" to="GameTimer" method="_on_timeout"]
+[connection signal="timeout" from="GameTimer" to="GameTimer/Visual" method="_on_game_timer_timeout"]

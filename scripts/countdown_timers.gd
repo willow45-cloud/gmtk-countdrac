@@ -148,7 +148,11 @@ func display_end_text():
 		pass
 	Global.text_stop()
 	#shows next button
-	#$next_button.show()
-	Global.spawn_button_true()
+	$next_button.show()
 	
-	
+# clicking next will cause rice to re-appear, this is intened do not worry
+func _on_next_button_pressed() -> void:
+	print("goes next level")
+	Global.game_is_not_over()
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
+	get_tree().change_scene_to_file("res://scenes/dodge_the_stakes.tscn")

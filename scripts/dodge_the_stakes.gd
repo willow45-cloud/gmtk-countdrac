@@ -6,9 +6,6 @@ var anim_gp = Vector2(170,10)
 var anim_gp2 = Vector2(450,160)
 
 func _ready() -> void:
-	Global.spawn_button_false()
-	$next_button.hide()
-	$go.play()
 	$game_over.hide()
 	$up.hide()
 	$down.hide()
@@ -45,10 +42,4 @@ func _process(delta: float) -> void:
 		$down.hide()
 		$Arrow.hide()
 		$Arrow2.hide()
-	if Global.spawn_button == true:
-		$next_button.show()
-
-func _on_next_button_pressed() -> void:
-	Global.game_is_not_over()
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
-	get_tree().change_scene_to_file("res://scenes/find_grant.tscn")
+	

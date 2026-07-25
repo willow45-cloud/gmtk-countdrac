@@ -24,6 +24,18 @@ func _on_timeout() -> void:
 	print("done")
 	
 	if _count < 1:
-		stop
+		_ontimeended()
 		$Visual._visualcountdownact()
-		print()
+		stop
+		print("stopped")
+
+func _ontimeended() -> void:
+	$"../CharacterBody2D".RB = true
+	if eot == false:
+			$"../Node2D/AnimatedSprite2D".play("Sun")
+			$"../AnimationPlayer".play("Rise")
+			
+			await get_tree().create_timer(0.5).timeout
+			$"../Node2D/Sun/CollisionShape2D".position.y = 21.984
+			
+			eot = true

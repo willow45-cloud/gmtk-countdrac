@@ -2,10 +2,15 @@ extends Timer
 signal counted_down(number)
 @export var _count := 5
 @onready var label: Label = $Visual
+var eot = false
+@export var _quicktime := 0.5
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	_count = randi_range(3,6)
+	wait_time = randf_range(0.4, 1.25)
+	_quicktime = randf_range(0.3, 0.6)
 	$Visual.numberdisplayed = _count
 	$Visual._visualcoutdown()
 
@@ -20,6 +25,7 @@ func _on_timeout() -> void:
 	emit_signal("counted_down", _count)
 	_count -= 1
 	$Visual.numberdisplayed = _count
+	#$"../TextureRect".texture.Gradient2D = Vector4(131, 42, 1, 255)
 	$Visual._visualcoutdown()
 	print("done")
 	

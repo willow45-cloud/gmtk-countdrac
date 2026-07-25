@@ -1,14 +1,6 @@
 [gd_scene format=3 uid="uid://c3bhfkokdx774"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://c86lb6ojjolkj" path="res://scripts/avoid_the_sun.gd" id="1_xq7m5"]
-<<<<<<< Updated upstream
-=======
-[ext_resource type="Texture2D" uid="uid://dop2icyq4m752" path="res://artwork/white169.jpg" id="2_2o8ac"]
->>>>>>> Stashed changes
-=======
 [ext_resource type="Script" uid="uid://c86lb6ojjolkj" path="res://scenes/avoid_the_sun.gd" id="1_xq7m5"]
->>>>>>> parent of eed16fc (main_menu and first 3 done)
 [ext_resource type="Script" uid="uid://ebft2jg8nrc5" path="res://scripts/dracula.gd" id="2_pfdry"]
 [ext_resource type="Script" uid="uid://dmlg5vvbxa263" path="res://scenes/sun.gd" id="3_7u0ky"]
 [ext_resource type="Texture2D" uid="uid://cw6sp0301awiu" path="res://artwork/countdown_sun and moon.png" id="3_651n6"]
@@ -17,9 +9,13 @@
 [ext_resource type="Script" uid="uid://bbaag6qlotgst" path="res://scenes/game_timer.gd" id="5_h8eg0"]
 [ext_resource type="Texture2D" uid="uid://cfdk46gcjci65" path="res://artwork2(prevent merge issues)/COUNT WALK.png" id="6_651n6"]
 [ext_resource type="FontFile" uid="uid://nh1vfpoxjq3c" path="res://artwork/CastleChunk-Regular.otf" id="6_e51gv"]
-[ext_resource type="Texture2D" uid="uid://c21vsm68d7pch" path="res://artwork/COUNT ASH.png" id="7_hr5so"]
-[ext_resource type="Texture2D" uid="uid://dsopodyug6mq8" path="res://artwork/COUNT_DODGE_THE SUN_V2.png" id="9_b0yrl"]
-[ext_resource type="Texture2D" uid="uid://bh7v7l6oup7ev" path="res://artwork2(prevent merge issues)/arrow.png" id="11_v8s6v"]
+
+[sub_resource type="Gradient" id="Gradient_651n6"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0.109857045, 0.15374571, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xrivr"]
+gradient = SubResource("Gradient_651n6")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
 radius = 29.0953
@@ -63,10 +59,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xb8ey"]
-atlas = ExtResource("7_hr5so")
-region = Rect2(0, 0, 128, 128)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o8ac"]
 atlas = ExtResource("6_651n6")
 region = Rect2(0, 0, 128, 128)
@@ -83,24 +75,8 @@ region = Rect2(256, 0, 128, 128)
 atlas = ExtResource("6_651n6")
 region = Rect2(384, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7fp5f"]
-atlas = ExtResource("9_b0yrl")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7q2cy"]
-atlas = ExtResource("9_b0yrl")
-region = Rect2(0, 0, 128, 128)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xb8ey")
-}],
-"loop": 1,
-"name": &"Dievis",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2o8ac")
@@ -117,43 +93,11 @@ animations = [{
 "loop": 1,
 "name": &"Draculawalk",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7fp5f")
-}],
-"loop": 1,
-"name": &"Duck",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7q2cy")
-}],
-"loop": 1,
-"name": &"Fear",
-"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrivr"]
 radius = 28.274994
 height = 112.97
-
-[sub_resource type="Animation" id="Animation_hr5so"]
-resource_name = "Die"
-length = 1.8333334
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.8333334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(199.085, 157), Vector2(199.085, 157), Vector2(199.085, 300)]
-}
 
 [sub_resource type="Animation" id="Animation_xb8ey"]
 resource_name = "Dracwalk"
@@ -198,18 +142,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-31, 157), Vector2(193.48, 157)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.03333333, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.00169034, 0.14703381, 0.29920605, 1), Color(0.6958192, 0.2727142, 9.62615e-08, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_v8s6v"]
 length = 3.0
@@ -237,22 +169,10 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(-31, 157)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.00169034, 0.14703381, 0.29920605, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_7fp5f"]
 resource_name = "Rise"
-length = 0.26666668
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -260,75 +180,27 @@ tracks/0/path = NodePath("Node2D/AnimatedSprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26666668),
+"times": PackedFloat32Array(0, 1.0333333),
 "transitions": PackedFloat32Array(1.0717757, 0.8408963),
 "update": 0,
 "values": [Vector2(-35.498, 31.79), Vector2(3.846, -6)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.26666668),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.69411767, 0.27450982, 0, 1), Color(0.3891384, 0.67167056, 0.99998826, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_b0yrl"]
-resource_name = "Sneakaway"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CharacterBody2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.5333333, 2, 3, 3.4333334),
-"transitions": PackedFloat32Array(0.079129554, 1e-05, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(199.085, 157), Vector2(208.725, 157), Vector2(208.725, 157), Vector2(249.14, 157), Vector2(249.14001, 157), Vector2(450.78, 157)]
-}
-
-[sub_resource type="Animation" id="Animation_5wab5"]
-resource_name = "bgclr"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.00169034, 0.14703381, 0.29920605, 1), Color(0.6958192, 0.2727142, 9.62615e-08, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5wab5"]
 _data = {
-&"Die": SubResource("Animation_hr5so"),
 &"Dracwalk": SubResource("Animation_xb8ey"),
 &"Movearound": SubResource("Animation_2o8ac"),
 &"RESET": SubResource("Animation_v8s6v"),
-&"Rise": SubResource("Animation_7fp5f"),
-&"Sneakaway": SubResource("Animation_b0yrl"),
-&"bgclr": SubResource("Animation_5wab5")
+&"Rise": SubResource("Animation_7fp5f")
 }
 
 [node name="AvoidTheSun" type="Node2D" unique_id=1568743786]
 script = ExtResource("1_xq7m5")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1665399573]
-modulate = Color(0.00169034, 0.14703381, 0.29920605, 1)
 offset_right = 384.0
 offset_bottom = 215.0
-texture = ExtResource("2_2o8ac")
+texture = SubResource("GradientTexture2D_xrivr")
 expand_mode = 1
 
 [node name="Node2D" type="Node2D" parent="." unique_id=23678491]
@@ -336,11 +208,11 @@ position = Vector2(192, 64)
 scale = Vector2(2.6, 2.6)
 
 [node name="Sun" type="Area2D" parent="Node2D" unique_id=1891852770]
-position = Vector2(1.9230781, -30.000004)
+position = Vector2(2.065384, -0.13846207)
 script = ExtResource("3_7u0ky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Sun" unique_id=1247053804]
-position = Vector2(-2.065, -14.67)
+position = Vector2(-2.065383, -5.2461543)
 shape = SubResource("CircleShape2D_xrivr")
 debug_color = Color(0, 0.6, 0.69803923, 0.4392157)
 
@@ -348,6 +220,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0.4392157)
 position = Vector2(27.69231, 5.384617)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_b1lj4")
+animation = &"new_animation"
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=167241570]
 offset_right = 385.0
@@ -360,12 +233,11 @@ position = Vector2(-31, 157)
 script = ExtResource("2_pfdry")
 
 [node name="Dracula" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=471144206]
-position = Vector2(0, -5)
+position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_xrivr")
-animation = &"Dievis"
+animation = &"Draculawalk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=955417269]
-position = Vector2(-1.4799957, 11)
 shape = SubResource("CapsuleShape2D_xrivr")
 
 [node name="GameTimer" type="Timer" parent="." unique_id=881681026]
@@ -373,6 +245,7 @@ script = ExtResource("5_h8eg0")
 _count = 3
 
 [node name="Visual" type="Label" parent="GameTimer" unique_id=2030103548]
+visible = false
 offset_left = 138.0
 offset_top = 45.0
 offset_right = 256.0
@@ -389,36 +262,6 @@ actiondisplayed = "DUCK"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=406644649]
 libraries/ = SubResource("AnimationLibrary_5wab5")
-
-[node name="ToolTip" type="Sprite2D" parent="." unique_id=1026239884]
-position = Vector2(348, 171)
-rotation = 3.1415927
-texture = ExtResource("11_v8s6v")
-
-[node name="Label" type="Label" parent="ToolTip" unique_id=1371202263]
-offset_left = 30.99997
-offset_top = -15.0
-offset_right = 91.99997
-offset_bottom = 8.0
-rotation = 3.1415927
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_e51gv")
-text = "To duck"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="End" type="Label" parent="." unique_id=1629520518]
-offset_left = 120.0
-offset_top = 45.0
-offset_right = 269.0
-offset_bottom = 107.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
-theme_override_fonts/font = ExtResource("6_e51gv")
-theme_override_font_sizes/font_size = 50
-text = "Awful"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="body_entered" from="Node2D/Sun" to="CharacterBody2D" method="_on_sun_body_entered"]
 [connection signal="timeout" from="GameTimer" to="GameTimer" method="_on_timeout"]

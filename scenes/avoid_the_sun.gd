@@ -3,6 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.spawn_button_false()
+	$next.hide()
+	$go.play()
 	$CharacterBody2D/Dracula.play("Draculawalk")
 	$AnimationPlayer.play("Movearound")
 	$GameTimer/Visual.visible = not visible
@@ -21,4 +24,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Global.spawn_button == true:
+		$next.show()
+
+
+func _on_next_pressed() -> void:
+	Global.game_is_not_over()
+	Global.got_star4_true()
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn") 

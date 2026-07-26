@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dsopodyug6mq8" path="res://artwork/COUNT_DODGE_THE SUN_V2.png" id="9_b0yrl"]
 [ext_resource type="Texture2D" uid="uid://bh7v7l6oup7ev" path="res://artwork2(prevent merge issues)/arrow.png" id="13_hr5so"]
 [ext_resource type="AudioStream" uid="uid://dothpp0bmgiyj" path="res://sound_effects/low_cat.wav" id="14_b0yrl"]
+[ext_resource type="AudioStream" uid="uid://icd4wirfwb15" path="res://sound_effects/cat_sounds.wav" id="15_g8one"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
 radius = 29.0953
@@ -311,8 +312,8 @@ sprite_frames = SubResource("SpriteFrames_b1lj4")
 animation = &"new_animation"
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=167241570]
-offset_right = 385.0
-offset_bottom = 216.0
+offset_right = 415.30093
+offset_bottom = 233.0
 texture = ExtResource("4_2o8ac")
 expand_mode = 1
 
@@ -321,7 +322,7 @@ position = Vector2(-31, 157)
 script = ExtResource("2_pfdry")
 
 [node name="Dracula" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=471144206]
-position = Vector2(0, -6)
+position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_xrivr")
 animation = &"Dievis"
 
@@ -352,18 +353,19 @@ actiondisplayed = "DUCK"
 libraries/ = SubResource("AnimationLibrary_5wab5")
 
 [node name="ToolTip" type="Sprite2D" parent="." unique_id=297303137]
-position = Vector2(344, 168)
+position = Vector2(352, 160)
 rotation = 3.1415927
 texture = ExtResource("13_hr5so")
 
 [node name="Label" type="Label" parent="ToolTip" unique_id=1519810002]
-offset_left = 31.999996
-offset_top = -16.000004
-offset_right = 101.0
-offset_bottom = 6.999996
+offset_left = 32.999996
+offset_top = -14.000003
+offset_right = 102.0
+offset_bottom = 28.999996
 rotation = 3.1415927
 theme_override_fonts/font = ExtResource("6_e51gv")
-text = "To duck"
+text = "S
+To duck"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -389,6 +391,19 @@ pitch_scale = 0.75
 [node name="Start" type="AudioStreamPlayer2D" parent="." unique_id=1441004950]
 stream = ExtResource("14_b0yrl")
 
+[node name="go" type="AudioStreamPlayer" parent="." unique_id=464240927]
+stream = ExtResource("15_g8one")
+
+[node name="next" type="Button" parent="." unique_id=229468083]
+offset_left = 156.0
+offset_top = 152.0
+offset_right = 241.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("6_e51gv")
+theme_override_font_sizes/font_size = 36
+text = "Next"
+
 [connection signal="body_entered" from="Node2D/Sun" to="CharacterBody2D" method="_on_sun_body_entered"]
 [connection signal="timeout" from="GameTimer" to="GameTimer" method="_on_timeout"]
 [connection signal="timeout" from="GameTimer" to="GameTimer/Visual" method="_on_game_timer_timeout"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]

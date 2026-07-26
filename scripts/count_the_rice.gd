@@ -74,6 +74,7 @@ func _process(delta: float) -> void:
 		
 
 func _on_next_button_pressed() -> void:
+	Global.got_star1_true()
 	Global.game_is_not_over()
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
 	get_tree().change_scene_to_file("res://scenes/dodge_the_stakes.tscn")

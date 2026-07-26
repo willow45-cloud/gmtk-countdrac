@@ -13,7 +13,9 @@ config_version=5
 config/name="DraculaWarioware"
 run/main_scene="uid://b7io7gfxcmffn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://artwork/icon.svg"
+boot_splash/show_image=false
+boot_splash/image="uid://bo54cnf3il5tr"
+config/icon="uid://qeoh3qn5aqos"
 
 [autoload]
 

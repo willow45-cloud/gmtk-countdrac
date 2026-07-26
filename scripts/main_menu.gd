@@ -1,8 +1,17 @@
 extends Node2D
-
+var web = true
 var input_disabled = true
 #code for main menu here
 func _ready():
+	$GoldsStar.hide()
+	$GoldsStar2.hide()
+	$GoldsStar3.hide()
+	$GoldsStar4.hide()
+	$GoldsStar5.hide()
+	$GoldsStar6.hide()
+	$GoldsStar7.hide()
+	$GoldsStar8.hide()
+	
 	$back_ground/moving_opening/credit_holder.hide()
 	$back_ground/KitchenFloor/RiceSprite1.hide()
 	$back_ground/KitchenFloor/RiceSprite5.hide()
@@ -15,16 +24,37 @@ func _ready():
 	$back_ground/moving_opening/AnimationPlayer.play("opening_walk")
 	await get_tree().create_timer(2.0).timeout
 	$back_ground/moving_opening/AnimationPlayer.play("credits")
+	$back_ground/moving_opening/AnimatedSprite2D.play("new_animation")
 	await get_tree().create_timer(0.1).timeout
 	$back_ground/moving_opening/credit_holder.show()
 
 	$back_ground/KitchenBackground/AudioStreamPlayer.play()
+	
+	await get_tree().create_timer(0.4).timeout
+	$back_ground/moving_opening/AnimatedSprite2D.hide()
 	await get_tree().create_timer(3).timeout
 	$back_ground/moving_opening/AnimationPlayer.play("move_up")
 	$AudioStreamPlayer.play()
 	$back_ground/dancing.play("default")
 	$back_ground/dancing2.play("default")
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
+	$GoldsStar5.show()
+	$GoldsStar6.show()
+	$GoldsStar7.show()
+	$GoldsStar8.show()
+	
+	
+	if Global.got_star1 == true:
+		$GoldsStar.show()
+	if Global.got_star2 == true:
+		$GoldsStar2.show()
+	if Global.got_star3 == true:
+		$GoldsStar3.show()
+	if Global.got_star4 == true:
+		$GoldsStar4.show()
+	
+	
+	await get_tree().create_timer(0.1).timeout
 	
 	input_disabled = false
 	
@@ -111,6 +141,7 @@ func _on_level_4_mouse_entered() -> void:
 		$back_ground/NightSunDodgeBackground/AnimationPlayer.play("moon_move")
 		$back_ground/NightSunDodgeBackground.scale = Vector2(1.2, 1.2)
 		$back_ground/NightSunDodgeBackground/AudioStreamPlayer.play()
+		
 	
 func _on_level_4_mouse_exited() -> void:
 	if input_disabled == false:
@@ -121,7 +152,7 @@ func _on_level_4_mouse_exited() -> void:
 func _on_button_mouse_entered() -> void:
 	if input_disabled == false:
 		$back_ground/exit_button.scale = Vector2(0.7, 0.7)
-
+		$exit.play()
 
 func _on_button_mouse_exited() -> void:
 	if input_disabled == false:
@@ -129,5 +160,5 @@ func _on_button_mouse_exited() -> void:
 
 
 func _on_button_pressed() -> void:
-	if input_disabled == false:
+	if input_disabled == false and web == false:
 		get_tree().quit()

@@ -13,6 +13,21 @@ var grant_chosen = false
 var game_won = 0
 var spawn_button = false
 
+
+var got_star1 = false
+var got_star2 = false
+var got_star3 = false
+var got_star4 = false
+
+
+
+
+
+
+
+
+
+
 func _ready() -> void:
 	what_counter_doing = 0
 	text_running = false
@@ -130,4 +145,19 @@ func spawn_button_false():
 	spawn_button = false
 	
 	
+func got_star1_true():
+	got_star1 = true
+	
+func got_star2_true():
+	got_star2 = true
+	
+func got_star3_true():
+	got_star3 = true
+	
+func got_star4_true():
+	got_star4 = true
+	
+		
+		
+
 	

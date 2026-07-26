@@ -8,6 +8,7 @@ var I_am_grant = false
 
 
 func _ready():
+	
 	$Sprite2D/Button.disabled = false
 	Global.grant_chosen_false()
 	$Sprite2D/head_type1.hide()

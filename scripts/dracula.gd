@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 			$CollisionShape2D.position.y = 195.45
 			$"../End".text = "Dodged"
 			RB = false
+			Global.spawn_button_true()
 			
 	#if Input.is_action_just_released("down"):
 		#if RB == true:
@@ -45,6 +46,7 @@ func _on_sun_body_entered(body: Node2D) -> void:
 	
 	$"../AnimationPlayer".play("Die")
 	$Dracula.play("Dievis")
+	Global.spawn_button_true()
 	await get_tree().create_timer(3).timeout
 	
 	

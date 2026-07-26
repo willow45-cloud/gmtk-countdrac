@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bxmb7uwyyvw0v" path="res://COUNT ASH.png" id="7_hr5so"]
 [ext_resource type="Texture2D" uid="uid://dsopodyug6mq8" path="res://artwork/COUNT_DODGE_THE SUN_V2.png" id="9_b0yrl"]
 [ext_resource type="Texture2D" uid="uid://bh7v7l6oup7ev" path="res://artwork2(prevent merge issues)/arrow.png" id="13_hr5so"]
+[ext_resource type="AudioStream" uid="uid://dothpp0bmgiyj" path="res://sound_effects/low_cat.wav" id="14_b0yrl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
 radius = 29.0953
@@ -91,7 +92,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xb8ey")
 }],
 "loop": 1,
-"name": &"Ash",
+"name": &"Dievis",
 "speed": 5.0
 }, {
 "frames": [{
@@ -131,6 +132,22 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrivr"]
 radius = 28.274994
 height = 112.97
+
+[sub_resource type="Animation" id="Animation_hr5so"]
+resource_name = "Die"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664, 1.4333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(193.48, 158.075), Vector2(193.48, 158.075), Vector2(193.48, 295.64)]
+}
 
 [sub_resource type="Animation" id="Animation_xb8ey"]
 resource_name = "Dracwalk"
@@ -257,6 +274,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5wab5"]
 _data = {
+&"Die": SubResource("Animation_hr5so"),
 &"Dracwalk": SubResource("Animation_xb8ey"),
 &"Movearound": SubResource("Animation_2o8ac"),
 &"RESET": SubResource("Animation_v8s6v"),
@@ -305,7 +323,7 @@ script = ExtResource("2_pfdry")
 [node name="Dracula" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=471144206]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_xrivr")
-animation = &"Duck"
+animation = &"Dievis"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=955417269]
 position = Vector2(-6, 3)
@@ -363,6 +381,13 @@ text = "Dodged"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_h8eg0")
+
+[node name="Timerbeep" type="AudioStreamPlayer2D" parent="." unique_id=1359522289]
+stream = ExtResource("14_b0yrl")
+pitch_scale = 0.75
+
+[node name="Start" type="AudioStreamPlayer2D" parent="." unique_id=1441004950]
+stream = ExtResource("14_b0yrl")
 
 [connection signal="body_entered" from="Node2D/Sun" to="CharacterBody2D" method="_on_sun_body_entered"]
 [connection signal="timeout" from="GameTimer" to="GameTimer" method="_on_timeout"]

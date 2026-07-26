@@ -5,14 +5,12 @@ extends Node2D
 func _ready() -> void:
 	$CharacterBody2D/Dracula.play("Draculawalk")
 	$AnimationPlayer.play("Movearound")
-	await get_tree().create_timer(2).timeout
+	$GameTimer/Visual.visible = not visible
+	
 	$End.visible = not visible
 	$ToolTip.visible = not visible
-	$GameTimer/Visual.visible = not visible
-	$Node2D/AnimatedSprite2D.play("default")
-	$CharacterBody2D/Dracula.play("Draculawalk")
-	$AnimationPlayer.play("Movearound")
 	await get_tree().create_timer(2).timeout
+	$Node2D/AnimatedSprite2D.play("default")
 	$CharacterBody2D/Dracula.stop()
 	#$TextureRect2.texture = (dayscene)
 	$GameTimer.start()

@@ -25,6 +25,7 @@ func _on_timeout() -> void:
 	emit_signal("counted_down", _count)
 	_count -= 1
 	$Visual.numberdisplayed = _count
+	$"../Timerbeep".play()
 	#$"../TextureRect".texture.Gradient2D = Vector4(131, 42, 1, 255)
 	$Visual._visualcoutdown()
 	print("done")
@@ -33,15 +34,15 @@ func _on_timeout() -> void:
 		_ontimeended()
 		$Visual._visualcountdownact()
 		stop
+		$"../Timerbeep".volume_db = -80
 		print("stopped")
 
 func _ontimeended() -> void:
 	$"../CharacterBody2D".RB = true
 	if eot == false:
+			$"../Start".play()
 			$"../Node2D/AnimatedSprite2D".play("Sun")
 			$"../AnimationPlayer".play("Rise")
-			
 			await get_tree().create_timer(0.5).timeout
-			$"../Node2D/Sun/CollisionShape2D".position.y = 21.984
-			
+			$"../Node2D/Sun/CollisionShape2D".position.y = -8
 			eot = true

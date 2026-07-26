@@ -27,8 +27,7 @@ func _process(delta: float) -> void:
 			$Dracula.play("Duck")
 			$CollisionShape2D.position.y = 195.45
 			$"../End".text = "Dodged"
-			
-			RB == false
+			RB = false
 			
 	#if Input.is_action_just_released("down"):
 		#if RB == true:
@@ -39,11 +38,14 @@ func _process(delta: float) -> void:
 
 
 func _on_sun_body_entered(body: Node2D) -> void:
-	$"../End".visible = visible
+	RB = true
 	$"../GameTimer/Visual".visible = not visible
-	$Dracula.play("Dievis")
-	$"../AnimationPlayer".play("Die")
-	await get_tree().create_timer(3).timeout
+	$"../End".visible = visible
 	$"../End".text = "Awful"
+	
+	$"../AnimationPlayer".play("Die")
+	$Dracula.play("Dievis")
+	await get_tree().create_timer(3).timeout
+	
 	
 	
